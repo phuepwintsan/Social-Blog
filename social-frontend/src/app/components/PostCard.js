@@ -39,40 +39,52 @@ export default function PostCard({ post, refreshPosts }) {
   // UPDATE POST
   const updatePost = async () => {
 
-    setLoading(true)
+  if (!selectedPost) return;
 
-    const formData = new FormData()
+  setLoading(true);
 
-    formData.append("post_title", title)
-    formData.append("post_description", description)
+  const formData = new FormData();
 
-    if (image) {
-      formData.append("post_image", image)
-    }
+  formData.append("post_title", title);
+  formData.append("post_description", description);
 
-    await fetch(`https://phuepwintsan.pythonanywhere.com/api/posts/${id}/`, {
+  if (image) {
+    formData.append("post_image", image);
+  }
+
+  const res = await fetch(
+    `https://phuepwintsan.pythonanywhere.com/api/posts/${selectedPost.id}/`,
+    {
       method: "PUT",
       body: formData
-    })
+    }
+  );
 
-    setLoading(false)
-    setShowModal(false)
+  setLoading(false);
+  setShowModal(false);
 
-    refreshPosts()
+  if (res.ok) {
+    await refreshPosts();
   }
+};
 
 
   // DELETE POST
   const deletePost = async () => {
 
-    await fetch(`http://127.0.0.1:8000/api/posts/${post.id}/`, {
+  if (!selectedPost) return;
+
+  await fetch(
+    `https://phuepwintsan.pythonanywhere.com/api/posts/${selectedPost.id}/`,
+    {
       method: "DELETE"
-    })
+    }
+  );
 
-    setShowDeleteModal(false)
+  setShowDeleteModal(false);
 
-    refreshPosts()
-  }
+  await refreshPosts();
+};
 
 
   return (
