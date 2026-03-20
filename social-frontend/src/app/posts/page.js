@@ -9,26 +9,22 @@ export default function BlogPage() {
   const [posts, setPosts] = useState([])
   const [showCreateModal, setShowCreateModal] = useState(false)
 
-  // FETCH POSTS
-  const fetchPosts = async () => {
-
-    try {
-
-      const res = await fetch("http://127.0.0.1:8000/api/posts/", {
+ const fetchPosts = async () => {
+  try {
+    const res = await fetch(
+      "https://phuepwintsan.pythonanywhere.com/api/posts/",
+      {
         cache: "no-store"
-      })
+      }
+    );
 
-      const data = await res.json()
+    const data = await res.json();
+    setPosts(data);
 
-      setPosts(data)
-
-    } catch (error) {
-
-      console.error("Fetch error:", error)
-
-    }
-
+  } catch (error) {
+    console.error("Fetch error:", error);
   }
+};
 
 
   useEffect(() => {
