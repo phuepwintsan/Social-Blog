@@ -9,33 +9,30 @@ export default function CreatePost({ refreshPosts, closeModal }) {
   const [description, setDescription] = useState("")
   const [image, setImage] = useState(null)
 
-  const handleSubmit = async (e) => {
+ const handleSubmit = async (e) => {
 
-    e.preventDefault()
+  e.preventDefault()
 
-    const formData = new FormData()
+  const formData = new FormData()
 
-    formData.append("post_title", title)
-    formData.append("post_description", description)
+  formData.append("post_title", title)
+  formData.append("post_description", description)
 
-    if (image) {
-      formData.append("post_image", image)
-    }
-
-    const res = await fetch("http://127.0.0.1:8000/api/posts/", {
-      method: "POST",
-      body: formData
-    })
-
-    if (res.ok) {
-
-      refreshPosts()
-
-      closeModal()
-
-    }
-
+  if (image) {
+    formData.append("post_image", image)
   }
+
+  const res = await fetch("https://phuepwintsan.pythonanywhere.com/api/posts/", {
+    method: "POST",
+    body: formData
+  })
+
+  if (res.ok) {
+    refreshPosts()
+    closeModal()
+  }
+
+}
 
   return (
 
