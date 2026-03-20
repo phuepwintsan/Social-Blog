@@ -50,7 +50,7 @@ export default function PostCard({ post, refreshPosts }) {
       formData.append("post_image", image)
     }
 
-    await fetch(`http://127.0.0.1:8000/api/posts/${post.id}/`, {
+    await fetch(`https://phuepwintsan.pythonanywhere.com/api/posts/${id}/`, {
       method: "PUT",
       body: formData
     })
