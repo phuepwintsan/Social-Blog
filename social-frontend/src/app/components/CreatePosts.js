@@ -129,7 +129,7 @@ function InputField({ label, ...props }) {
       <label className="text-sm text-gray-600 block mb-1">{label}</label>
       <input
         {...props}
-        className="w-full border border-gray-300 rounded-xl px-4 py-2 focus:ring-2 focus:ring-blue-500 outline-none"
+        className="w-full border border-gray-300 text-gray-800 rounded-xl px-4 py-2 focus:ring-2 focus:ring-blue-500 outline-none"
       />
     </div>
   );
@@ -142,7 +142,7 @@ function TextAreaField({ label, ...props }) {
       <textarea
         rows="4"
         {...props}
-        className="w-full border border-gray-300 rounded-xl px-4 py-2 focus:ring-2 focus:ring-blue-500 outline-none"
+        className="w-full border border-gray-300 rounded-xl text-gray-800 px-4 py-2 focus:ring-2 focus:ring-blue-500 outline-none"
       />
     </div>
   );
@@ -171,7 +171,7 @@ function ImageUpload({ preview, onChange, onRemove }) {
         </div>
       ) : (
         <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-gray-300 rounded-xl cursor-pointer hover:border-blue-500 hover:bg-gray-50 transition">
-          <span className="text-gray-500 text-sm">Click to upload</span>
+          <span className="text-gray-800 text-sm">Click to upload</span>
           <input type="file" onChange={onChange} className="hidden" />
         </label>
       )}

@@ -118,14 +118,14 @@ export default function PostCard({ post, refreshPosts }) {
           <div className="flex gap-2 mt-4">
             <button
               onClick={() => setShowModal(true)}
-              className="px-3 py-1.5 rounded-lg bg-blue-600 text-gray-500 text-sm hover:bg-blue-700"
+              className="px-3 py-1.5 rounded-lg bg-blue-600 text-white text-sm hover:bg-blue-700"
             >
                Edit
             </button>
 
             <button
               onClick={() => setShowDeleteModal(true)}
-              className="px-3 py-1.5 rounded-lg bg-red-500 text-gray-500 text-sm hover:bg-red-600"
+              className="px-3 py-1.5 rounded-lg bg-red-500 text-white text-sm hover:bg-red-600"
             >
               Delete
             </button>
@@ -144,12 +144,14 @@ export default function PostCard({ post, refreshPosts }) {
             name="title"
             value={form.title}
             onChange={handleChange}
+            className = "text-gray-800"
           />
 
           <Textarea
             name="description"
             value={form.description}
             onChange={handleChange}
+            className = "text-gray-800"
           />
 
           <ImageUpload
@@ -211,7 +213,7 @@ function Input(props) {
   return (
     <input
       {...props}
-      className="w-full mb-4 border border-gray-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none"
+      className="w-full mb-4 border border-gray-300 rounded-xl px-4 py-3 focus:ring-2 text-gray-800 focus:ring-blue-500 outline-none"
     />
   );
 }
@@ -221,7 +223,7 @@ function Textarea(props) {
     <textarea
       rows="4"
       {...props}
-      className="w-full mb-4 border border-gray-300 rounded-xl px-4 py-3 focus:ring-2 text-gray-500 focus:ring-blue-500 outline-none"
+      className="w-full mb-4 border border-gray-300 rounded-xl px-4 py-3 focus:ring-2 text-gray-800 focus:ring-blue-500 outline-none"
     />
   );
 }
@@ -239,7 +241,7 @@ function ImageUpload({ preview, onChange, onRemove }) {
     </div>
   ) : (
     <label className="flex flex-col items-center justify-center h-32 border-2 border-dashed border-gray-300 text-gray-500 rounded-xl cursor-pointer hover:border-blue-500">
-      <span className="text-gray-500 text-sm">Upload Image</span>
+      <span className="text-gray-800 text-sm">Upload Image</span>
       <input type="file" onChange={onChange} className="hidden" />
     </label>
   );
