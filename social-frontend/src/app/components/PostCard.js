@@ -120,7 +120,7 @@ export default function PostCard({ post, refreshPosts }) {
               onClick={() => setShowModal(true)}
               className="px-3 py-1.5 rounded-lg bg-blue-600 text-white text-sm hover:bg-blue-700"
             >
-               Edit
+              Edit
             </button>
 
             <button
@@ -137,21 +137,21 @@ export default function PostCard({ post, refreshPosts }) {
       {showModal && (
         <Modal>
           <h2 className="text-2xl font-semibold text-gray-800 mb-6">
-           Edit Post
+            Edit Post
           </h2>
 
           <Input
             name="title"
             value={form.title}
             onChange={handleChange}
-            className = "text-gray-800"
+            className="text-gray-800"
           />
 
           <Textarea
             name="description"
             value={form.description}
             onChange={handleChange}
-            className = "text-gray-800"
+            className="text-gray-800"
           />
 
           <ImageUpload
@@ -174,11 +174,12 @@ export default function PostCard({ post, refreshPosts }) {
       {showDeleteModal && (
         <Modal small>
           <h2 className="text-xl font-semibold text-gray-800 mb-2">
-           Delete Post
+            Delete Post
           </h2>
 
           <p className="text-gray-500 mb-6">
-            This action cannot be undone.
+            Are you sure you want to delete this post?
+            You won’t be able to recover it.
           </p>
 
           <div className="flex justify-end gap-3">
