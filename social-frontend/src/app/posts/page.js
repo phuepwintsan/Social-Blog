@@ -12,7 +12,7 @@ export default function BlogPage() {
  const fetchPosts = async () => {
   try {
     const res = await fetch(
-      "https://phuepwintsan.pythonanywhere.com/api/posts/",
+      "https://api.phuepwintsan.com/api/posts/",
       {
         cache: "no-store"
       }

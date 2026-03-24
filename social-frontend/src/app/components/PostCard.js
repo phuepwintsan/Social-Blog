@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-const API_URL = "https://phuepwintsan.pythonanywhere.com";
+const API_URL = "https://api.phuepwintsan.com/api";
 
 export default function PostCard({ post, refreshPosts }) {
 
