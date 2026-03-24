@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const API_URL = "https://api.phuepwintsan.com/api";
+const API_URL = "https://api.phuepwintsan.com";
 
 export default function CreatePost({ refreshPosts, closeModal }) {
 
