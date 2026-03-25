@@ -42,7 +42,16 @@ INSTALLED_APPS = [
     'posts',
     'corsheaders',
 ]
-
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'socialblog_db',
+        'USER': 'myuser',
+        'PASSWORD': 'p@ssw0rd',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
